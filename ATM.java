@@ -1,39 +1,50 @@
 import java.util.Scanner;
 
-class Account {
+class Account 
+{
     private String accountNumber;
     private double balance;
 
-    public Account(String accountNumber, double balance) {
+    public Account(String accountNumber, double balance) 
+    {
         this.accountNumber = accountNumber;
         this.balance = balance;
     }
 
-    public void deposit(double amount) {
+    public void deposit(double amount) 
+    {
         if (amount > 0) {
             balance += amount;
             System.out.println("Deposited: $" + amount);
-        } else {
+        } 
+        else 
+        {
             System.out.println("Invalid amount for deposit");
         }
     }
 
-    public void withdraw(double amount) {
+    public void withdraw(double amount) 
+    {
         if (amount > 0 && balance >= amount) {
             balance -= amount;
             System.out.println("Withdrawn: $" + amount);
-        } else {
+        } 
+        else 
+        {
             System.out.println("Insufficient funds or invalid amount for withdrawal");
         }
     }
 
-    public double getBalance() {
+    public double getBalance() 
+    {
         return balance;
     }
 }
 
-public class ATM {
-    public static void main(String[] args) {
+public class ATM 
+{
+    public static void main(String[] args) 
+    {
         Account account = new Account("123456789", 1000.0);
         Scanner scanner = new Scanner(System.in);
         int choice;
@@ -47,7 +58,8 @@ public class ATM {
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
 
-            switch (choice) {
+            switch (choice) 
+            {
                 case 1:
                     System.out.print("Enter amount to deposit: $");
                     amount = scanner.nextDouble();
@@ -67,7 +79,8 @@ public class ATM {
                 default:
                     System.out.println("Invalid choice. Please enter a valid option.");
             }
-        } while (choice != 4);
+        } 
+            while (choice != 4);
 
         scanner.close();
     }
